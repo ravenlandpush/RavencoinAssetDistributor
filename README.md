@@ -54,7 +54,11 @@ Eg. if ravend runs as 'raven' and you want to run the script as user 'someuser',
 ```bash
 # Copy the RPC configuration we provide for you
 cp -rp RavencoinAssetDistributor/.raven /home/someuser
+```
 
+**PLEASE NOTE RAVEND MUST BE RESTARTED BY THE USER FOR CHANGES TO TAKE EFFECT**
+
+```
 # Change the section /yourpassword/ to the desired secure password (script works without this step but added for security information purposes)
 sed -i 's/securepasswordgoeshere/yourpassword/g' /home/someuser/.raven/raven.conf
 ```

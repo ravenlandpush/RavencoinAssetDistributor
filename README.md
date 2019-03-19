@@ -4,7 +4,7 @@
 
 This simple script is capable of distributing a Ravencoin Asset Token to addresses in bulk. 
 
-It is the first public revision of an air drop application used for the RAVENLAND Alpha test security token distribution on 1st January 2019 which saw the WWW.RAVENLAND.ORG asset distributed to nearly 1 million addresses. 
+It is the first public revision of an air drop application used for the RAVENLAND Alpha test security token distribution on 1st January 2019 which saw the WWW.RAVENLAND.ORG asset distributed to nearly 1 million addresses. The way the script works is that it reads the Ravencoin addresses within the provided file sample-addresses.txt. It traverses the address list line by line, making an raven-cli RPC call to transfer the assets one by one. This is a simplified community version of the same script used by Ravenland, it has limited validation functions and logging, however has some basic protection for mem pool overloading, and RPC connection breaks. Just ensure that you run the application using screen or run the application piping the output to get a full log. Examples given below.
 
 This project has been shared freely this for the enjoyment of the Ravencoin community and our Ravenland Ravencoin partner network. Thanks to all that have supported us in our beta testing. KAWWW!
 
@@ -21,6 +21,15 @@ cd RavencoinAssetDistributor
 
 # Edit the script "ASSET=" and "AMOUNT=" variables for your use
 nano dist.sh
+
+# Running the script
+./dist.sh
+
+# Running the script and basic logging of transactions (that can be parsed / validated later)
+./dist.sh > distribution.log
+
+# To view process if using distribution.log use
+tail -f distribution.log
 ```
 
 For more expert users who already are familiar with and have correctly setup their RPC and raven-cli environment. You should only need the above. And to set the ASSET="" AMOUNT="" variables in the dist.sh script file.

@@ -23,6 +23,7 @@ cd RavencoinAssetDistributor
 nano dist.sh
 
 # Running the script
+chmod +x dist.sh
 ./dist.sh
 
 # Running the script and basic logging of transactions (that can be parsed / validated later)
